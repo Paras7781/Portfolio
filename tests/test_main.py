@@ -1,12 +1,4 @@
-import os
-from pathlib import Path
-
 from fastapi.testclient import TestClient
-
-TEST_DB_PATH = Path(__file__).resolve().parent / 'test_portfolio.db'
-os.environ['DATABASE_URL'] = f'sqlite:///{TEST_DB_PATH.as_posix()}'
-if TEST_DB_PATH.exists():
-    TEST_DB_PATH.unlink()
 
 import main
 
@@ -15,11 +7,6 @@ client = TestClient(main.app)
 
 def teardown_module(module):
     client.close()
-    main.engine.dispose()
-    try:
-        TEST_DB_PATH.unlink()
-    except PermissionError:
-        pass
 
 
 def test_health_endpoint():
