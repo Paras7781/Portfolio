@@ -94,6 +94,18 @@ function initBlog() {
 }
 
 function initForm() {
+  const publicKey = 'XwaGsemjxA8px_N4C';
+  const serviceId = 'service_wwv45o7';
+  const templateId = 'template_poovibe';
+  const isConfigured = publicKey !== 'YOUR_PUBLIC_KEY' && serviceId !== 'YOUR_SERVICE_ID' && templateId !== 'YOUR_TEMPLATE_ID';
+
+  if (!isConfigured) {
+    formStatus.textContent = 'EmailJS is not configured yet. Add your Public Key, Service ID, and Template ID in script.js to enable form submissions.';
+    return;
+  }
+
+  emailjs.init(publicKey);
+
   contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(contactForm);
@@ -112,8 +124,19 @@ function initForm() {
       return;
     }
 
-    formStatus.textContent = 'Thanks for reaching out! I will get back to you soon.';
-    contactForm.reset();
+    formStatus.textContent = 'Sending your message...';
+
+    emailjs.send(serviceId, templateId, {
+      from_name: name,
+      from_email: email,
+      message: message
+    }).then(() => {
+      formStatus.textContent = 'Thanks for reaching out! I will get back to you soon.';
+      contactForm.reset();
+    }).catch((error) => {
+      console.error('EmailJS error:', error);
+      formStatus.textContent = 'Message could not be sent. Please email me directly at chouguleparas498@gmail.com.';
+    });
   });
 }
 
