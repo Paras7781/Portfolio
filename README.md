@@ -1,27 +1,43 @@
-# Student Portfolio Website
+# Portfolio with FastAPI Backend
 
-A modern, responsive single-page portfolio website built with HTML, CSS, and JavaScript.
+A modern portfolio website with a lightweight FastAPI backend for serving the site and handling contact form submissions.
 
 ## Features
-- Responsive hero section
-- About, skills, projects, experience, education, resume, testimonials, blog, and contact sections
-- Dark/light mode toggle
-- Smooth scrolling and reveal animations
-- Project filtering
-- Contact form validation
+- Responsive portfolio site
+- FastAPI health endpoint and contact API
+- Contact form submission through a real backend endpoint
+- Local development server with hot reload support
 
 ## Run locally
-1. Open the project folder.
-2. Start a simple server:
+1. Install dependencies:
    ```bash
-   python -m http.server 8000
+   pip install -r requirements.txt
    ```
-3. Visit http://127.0.0.1:8000/
+2. Start the backend:
+   ```bash
+   uvicorn main:app --reload
+   ```
+3. Open http://127.0.0.1:8000/
 
-## Deploy
-- Vercel: connect the folder and deploy as a static site.
-- Netlify: drag and drop the folder or connect the GitHub repo.
-- GitHub Pages: publish the folder from the repository settings.
+## API endpoints
+- GET /api/health
+- POST /api/contact
 
-## Customize
-Replace the placeholder content in index.html and assets/resume.pdf with your real information.
+## Email setup
+To send real emails from the contact form, set these environment variables before starting the server:
+
+```bash
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USERNAME=your-email@example.com
+SMTP_PASSWORD=your-app-password
+SMTP_FROM=your-email@example.com
+SMTP_TO=your-email@example.com
+```
+
+If these are not configured, the contact form will still be accepted locally and return a success message without sending an email.
+
+## Testing
+```bash
+pytest -q
+```
