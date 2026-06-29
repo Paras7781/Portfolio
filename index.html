@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A modern student portfolio website showcasing academic achievements, skills, projects, and experience." />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Paras Chougule | Student Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=3" />
+  </head>
+  <body>
+    <div class="page-loader" id="pageLoader">
+      <div class="loader-ring"></div>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav container">
+        <a href="#home" class="logo">Paras<span>.</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</button>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero container reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">Python Developer • IoT & AI Enthusiast</p>
+          <h1>Hi, I’m <span>Paras Chougule</span></h1>
+          <h2>I build <span class="typed-text" id="typedText">smart embedded and AI solutions</span></h2>
+          <p class="hero-description">
+                Passionate developer skilled in Python, Java, Generative AI, IoT, ESP32, and Arduino, building intelligent and efficient real-world solutions.          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Hire Me</a>
+            <a class="btn btn-ghost" href="assets/Resume_Paras_Chougule.pdf" download>Download Resume</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <strong>10+</strong>
+              <span>Projects</span>
+            </div>
+            <div>
+              <strong>3</strong>
+              <span>Internships</span>
+            </div>
+            <div>
+              <strong>4.8/5</strong>
+              <span>Average Rating</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="assets/IMG_20260629_210313.jpg.jpeg" alt="Paras Chougule portrait" />
+          <div class="hero-card-badge">
+            <span>Available for internships</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">About me</p>
+          <h3>Designing thoughtful solutions with a student’s curiosity and a builder’s mindset.</h3>
+        </div>
+        <div class="about-grid">
+          <div class="glass-card">
+            <h4>Personal intro</h4>
+            <p>
+              I’m a B.Tech Information Technology student from Pune, India, with hands-on experience in Python development, IoT systems, and GenAI-based projects. I enjoy turning ideas into practical and reliable solutions.
+            </p>
+            <p>
+              My goal is to contribute to impactful products while strengthening my skills in Python, Java, DSA, DBMS, OS, and emerging AI technologies.
+            </p>
+          </div>
+          <div class="glass-card">
+            <h4>Quick details</h4>
+            <ul class="detail-list">
+              <li><span>Location</span> Pune, India</li>
+              <li><span>Education</span> B.Tech IT (2024–2027)</li>
+              <li><span>Interests</span> GenAI, IoT, Python, Java, DSA</li>
+              <li><span>Hobbies</span> Coding, Building Projects, Learning New Tech</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h3>Hands-on learning through internships, leadership, and community work.</h3>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item glass-card">
+            <h4>Python Developer Intern — Detcher Tech Co.</h4>
+            <p>Developed a secure OTP generator in Python with random, unique, and expiring code logic for digital services.</p>
+          </div>
+          <div class="timeline-item glass-card">
+            <h4>IoT & Robotics Intern — Incubators Systems Pvt. Ltd.</h4>
+            <p>Built IoT solutions with ESP32, Arduino, and Raspberry Pi, including cloud-connected dashboards and robotics exposure.</p>
+          </div>
+          <div class="timeline-item glass-card">
+            <h4>Volunteer — Sinhgad Student Council</h4>
+            <p>Assisted in organizing and managing events to ensure smooth execution and student engagement.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="section container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Education</p>
+          <h3>Academic background grounded in technology, communication, and impact.</h3>
+        </div>
+        <div class="education-grid">
+          <div class="glass-card">
+            <h4>Education</h4>
+            <p>B.Tech in Information Technology</p>
+            <p>Sou. Venutai Chavan Polytechnic, Pune, India • Aug 2021 – May 2024</p>
+            <p>RMD Sinhgad Engineering College, Pune, India • Aug 2024 – May 2027</p>
+          </div>
+          <div class="glass-card">
+            <h4>Relevant coursework</h4>
+            <ul class="detail-list">
+              <li>Data Structures</li>
+              <li>Algorithms</li>
+              <li>Python</li>
+              <li>Java</li>
+              <li>DSA</li>
+              <li>DBMS</li>
+              <li>OS</li>
+              <li>GenAI</li>
+              <li>IoT</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="resume" class="section container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Resume</p>
+          <h3>A compact snapshot of my experience, achievements, and direction.</h3>
+        </div>
+        <div class="resume-card glass-card">
+          <h4>Download my full resume</h4>
+          <p>Recruiters can review my experience, projects, and strengths in one document.</p>
+            <a class="btn btn-primary" href="assets/Resume_Paras_Chougule.pdf" download>Download Resume</a>
+        </div>
+      </section>
+
+      <section id="contact" class="section container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h3>Let’s connect for internships, projects, or collaboration opportunities.</h3>
+        </div>
+        <div class="contact-grid">
+          <form class="glass-card contact-form" id="contactForm">
+            <label>
+              Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <p class="form-status" id="formStatus"></p>
+          </form>
+          <div class="glass-card contact-details">
+            <h4>Reach me</h4>
+            <ul class="detail-list">
+              <li><span>Email</span> chouguleparas498@gmail.com</li>
+              <li><span>Phone</span> +91 9322282386</li>
+              <li><span>Location</span> Pune, India</li>
+            </ul>
+            <div class="chip-list">
+              <a href="https://www.linkedin.com/in/paras-chougule7781" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span></a>
+              <!-- <a href="https://github.com/paraschougule" target="_blank" rel="noopener noreferrer"><span>GitHub</span></a> -->
+              <!-- <a href="https://leetcode.com/paraschougule/" target="_blank" rel="noopener noreferrer"><span>LeetCode</span></a> -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>© 2026 Paras Chougule. Crafted for impact and growth.</p>
+        <a href="#home" class="back-top" id="backTop">↑ Top</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Paras Chougule portrait">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" rx="48" fill="url(#bg)"/>
+  <circle cx="400" cy="360" r="190" fill="#f8fafc" opacity="0.95"/>
+  <path d="M250 770c30-180 140-260 300-260 75 0 140 24 190 72v220H250Z" fill="#f8fafc" opacity="0.95"/>
+  <circle cx="400" cy="345" r="120" fill="#f2c6a0"/>
+  <path d="M290 320c20-110 90-170 170-170 76 0 142 53 160 155-50-22-105-34-160-34-57 0-111 12-170 49Z" fill="#111827"/>
+  <circle cx="345" cy="345" r="9" fill="#111827"/>
+  <circle cx="455" cy="345" r="9" fill="#111827"/>
+  <path d="M360 420c34 38 76 38 110 0" stroke="#a85a3f" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <text x="400" y="900" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700" fill="#f8fafc">PARAS CHOUGULE</text>
+</svg>
