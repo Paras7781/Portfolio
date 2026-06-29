@@ -37,6 +37,15 @@ SMTP_TO=your-email@example.com
 
 If these are not configured, the contact form will still be accepted locally and return a success message without sending an email.
 
+## Database setup
+The app now persists contact messages using SQLite by default. The database file is created automatically at `portfolio.db`.
+
+To override the database location, set:
+
+```bash
+DATABASE_URL=sqlite:///./custom.db
+```
+
 ## Testing
 ```bash
 pytest -q
