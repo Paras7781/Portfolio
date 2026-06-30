@@ -11,6 +11,14 @@ const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 const backTop = document.getElementById('backTop');
 
+const emailJsServiceId = 'service_wwv45o7';
+const emailJsTemplateId = 'template_poovibe';
+const emailJsPublicKey = 'XwaGsemjxA8px_N4C';
+
+if (typeof emailjs !== 'undefined') {
+  emailjs.init(emailJsPublicKey);
+}
+
 const phrases = ['web experiences', 'clean interfaces', 'impactful products', 'student-driven ideas'];
 let phraseIndex = 0;
 let charIndex = 0;
@@ -112,26 +120,31 @@ function initForm() {
       return;
     }
 
+    if (typeof emailjs === 'undefined') {
+      formStatus.textContent = 'Email service not loaded. Please try again later.';
+      return;
+    }
+
     formStatus.textContent = 'Sending your message...';
 
+    const emailParams = {
+      name,
+      email,
+      message,
+      from_name: name,
+      from_email: email,
+      reply_to: email
+    };
+
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message })
-      });
+      await emailjs.send(emailJsServiceId, emailJsTemplateId, emailParams);
 
-      const data = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(data.detail || 'Unable to send message');
-      }
-
-      formStatus.textContent = 'Thanks for reaching out! Your message was received successfully.';
+      formStatus.textContent = 'Thanks for reaching out! Your message was sent successfully.';
       contactForm.reset();
     } catch (error) {
       console.error('Contact form error:', error);
-      formStatus.textContent = 'Message could not be sent right now. Please email me directly at chouguleparas498@gmail.com.';
+      const errorText = error?.text || error?.message || JSON.stringify(error);
+      formStatus.textContent = `Message could not be sent right now: ${errorText}`;
     }
   });
 }

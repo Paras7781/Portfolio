@@ -1,43 +1,21 @@
-# Portfolio with FastAPI Backend
+# Portfolio Website
 
-A modern portfolio website with a lightweight FastAPI backend for serving the site and handling contact form submissions.
+A modern portfolio website with a frontend-only EmailJS contact form.
 
 ## Features
 - Responsive portfolio site
-- FastAPI health endpoint and contact API
-- Contact form submission through a real backend endpoint
-- Local development server with hot reload support
+- EmailJS-powered contact form without a backend
+- Simple local testing with a static file server
 
 ## Run locally
-1. Install dependencies:
+1. Start a local server from the project directory:
    ```bash
-   pip install -r requirements.txt
+   python -m http.server 8000
    ```
-2. Start the backend:
-   ```bash
-   uvicorn main:app --reload
-   ```
-3. Open http://127.0.0.1:8000/
+2. Open http://127.0.0.1:8000/
 
-## API endpoints
-- GET /api/health
-- POST /api/contact
+## Contact form
+The contact form uses EmailJS for frontend email delivery, so no backend or SMTP configuration is required.
 
-## Email setup
-To send real emails from the contact form, set these environment variables before starting the server:
-
-```bash
-SMTP_HOST=smtp.example.com
-SMTP_PORT=587
-SMTP_USERNAME=your-email@example.com
-SMTP_PASSWORD=your-app-password
-SMTP_FROM=your-email@example.com
-SMTP_TO=your-email@example.com
-```
-
-If these are not configured, the contact form will still be accepted locally and return a success message without sending an email.
-
-## Testing
-```bash
-pytest -q
-```
+## Dependencies
+This project is frontend-focused and does not require backend Python dependencies.
